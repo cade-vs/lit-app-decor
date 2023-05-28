@@ -1,0 +1,4 @@
+#!/bin/bash
+
+alter-css.pl -i /usr/local/decor/web/css lit.in.css  > ../htdocs/i/default.css
+

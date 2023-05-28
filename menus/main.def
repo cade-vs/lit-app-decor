@@ -1,0 +1,17 @@
+
+  grant access to 999
+
+=HOME
+
+  type  action  home
+  grant access to 999
+
+=LEAVES
+  
+=PREFS
+
+  label Preferences
+  type  sub   PREFS
+  right
+  grant access to 999
+  

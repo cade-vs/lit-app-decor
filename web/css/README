@@ -1,0 +1,9 @@
+
+to regenerate or create new color css, you will need ALTER-CSS:
+
+  https://github.com/cade-vs/alter-css
+
+then:
+
+  alter-css.pl -i /usr/local/decor/web/css lit.in.css  > ../htdocs/i/default.css
+

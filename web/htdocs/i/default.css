@@ -1,0 +1,1630 @@
+/*############################################################################
+##
+##  Decor application machinery core
+##  2014-2021 (c) Vladi Belperchinov-Shabanski "Cade"
+##  <cade@bis.bg> <cade@biscom.net> <cade@cpan.org>
+##
+##  LICENSE: GPLv2
+##
+############################################################################*/
+
+/* THIS FILE IS GENERATED! PLEASE, DO NOT MODIFY! -- GENERATED AT Sun May 28 20:23:21 2023 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           
+
+
+
+
+
+/*############################################################################
+##
+##  Decor application machinery core
+##  2014-2021 (c) Vladi Belperchinov-Shabanski "Cade"
+##  <cade@bis.bg> <cade@biscom.net> <cade@cpan.org>
+##
+##  LICENSE: GPLv2
+##
+############################################################################*/
+
+
+
+
+
+
+
+
+/*** fonts ******************************************************************/
+
+/*############################################################################
+##
+##  Decor application machinery core
+##  2014-2023 (c) Vladi Belperchinov-Shabanski "Cade"
+##  <cade@bis.bg> <cade@biscom.net> <cade@cpan.org>
+##
+##  LICENSE: GPLv2
+##
+############################################################################*/
+
+@font-face 
+        {
+        font-family: 'oswald-bold';
+        src: url('fonts/Oswald-Bold.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'oswald';
+        src: url('fonts/Oswald-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'mont';
+        src: url('fonts/Montserrat-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'mont-bold';
+        src: url('fonts/Montserrat-SemiBold.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'prime';
+        src: url('fonts/CourierPrime-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'prime-bold';
+        src: url('fonts/CourierPrime-Bold.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'rubik';
+        src: url('fonts/Rubik-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'comforter';
+        src: url('fonts/Comforter-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'roboto-bold';
+        src: url('fonts/Roboto-Bold.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'roboto';
+        src: url('fonts/Roboto-Regular.ttf')  format('truetype');
+        }
+
+@font-face 
+        {
+        font-family: 'bebas';
+        src: url('fonts/BebasNeue-Regular.ttf')  format('truetype');
+        }
+
+/*** end of fonts ***********************************************************/
+
+/*** main/body **************************************************************/
+
+html
+        {
+        height: 100%;
+        box-sizing: border-box;
+        }
+
+*, *:before, *:after 
+        {
+        box-sizing: inherit;
+        }
+
+body
+        {
+        margin: 0;
+        height: 100%;
+
+        color:            #000;
+        background-color: #EEE;
+        background-image: url( "" );
+
+        font: ;
+        }
+
+.fill
+        {
+        width: 100%;
+        }
+
+table.main
+        {
+        width:  100%;
+        height: 100%;
+        }
+
+tr.main_body
+        {
+        width:  100%;
+        height: 100%;
+        vertical-align: top;
+        }
+
+td.main_body
+        {
+        text-align: center;
+        vertical-align: top;
+        
+        padding: 0.5em;
+        }
+
+td.main_footer
+        {
+        color:                #000;
+        background-color:     #FFF;
+        border-top: solid 1px #777;
+        width:  100%;
+        height: 100%;
+        vertical-align: top;
+        padding: 4px;
+        font: ;
+        }
+
+
+/*** for_screen/for_print ***************************************************/
+
+div#div_for_screen
+        {
+        width:  100%;
+        height: 100%;
+        }
+
+@media screen
+        {
+        div#div_for_screen { display: block; }
+        div#div_for_print  { display: none;  }
+        }
+
+@media print
+        {
+        div#div_for_screen { display: none;  }
+        div#div_for_print  { display: block; }
+        body
+              {
+              color:            #000;
+              background-color: #FFF;
+              background-image: none;
+              }
+        }
+
+/*** globals ****************************************************************/
+
+a       
+        {
+        color: #555;
+        border-bottom: dotted 1px #222;
+
+        text-decoration: none;
+        }
+
+a:hover 
+        {
+        color: #000;
+        border-bottom: solid 1px #000;
+        }
+
+a:focus
+        {
+        color: #F00;
+        border-bottom: solid 1px #0F0;
+        }
+
+a.plain
+        {
+        border: none;
+        text-decoration: none;
+        }
+
+img
+        {
+        vertical-align: middle;
+        }
+
+h1      
+        { 
+        margin: 2px 2px 2px 2px; 
+        }
+
+
+div.error-text
+        {
+        color: #FFF;
+        background-color: #611;
+        border:      solid 1px #611;
+        border-left: solid 4px #611;
+
+        width:  80%;
+        text-align: center;
+        padding: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+div.info-text
+        {
+        color: #FFF;
+        background-color: #357;
+        border:      solid 1px #68A;
+        border-left: solid 4px #68A;
+
+        width:  80%;
+        text-align: center;
+        padding: 0.3em;
+        padding-left: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+@media (max-width: 1100px) 
+{
+div.info-text
+        {
+        width:  100%;
+        }
+}
+
+
+div.report-text
+        {
+        color: ;
+        background-color: ;
+        border:      solid  ;
+        border-left: solid  ;
+
+        width: min-content;
+        text-align: left;
+        padding: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+div.link-data
+        {
+        color: #CCC;
+        background-color: #113;
+        border-top:    solid 1px #444;
+        border-left:   solid 1px #444;
+        border-bottom: solid 1px #444;
+        border-right:  solid 1px #444;
+
+        padding: 0.5em;
+        margin: 0 0 0 0;
+        }
+
+div.link-empty
+        {
+        color: #000;
+        background-color: #a9775b;
+        border-top:    solid 1px #444;
+        border-left:   solid 1px #444;
+        border-bottom: solid 1px #444;
+        border-right:  solid 1px #444;
+
+        padding: 0.5em;
+        margin: 0 0 0 0;
+        }
+
+.warning
+        {
+        font-weight: bold;
+        color:            #FFF;
+        background-color: #822;
+        border: solid 1px #633;
+        padding: 2px;
+        margin: 2px 2px 2px 2px;
+        }
+
+.hi
+        {
+        color: #FFF;
+        font-weight: bold;
+        }
+
+table
+        {
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        }
+
+.cursor-pointer
+        {
+        cursor: pointer;
+        }
+
+/*** logo head table ********************************************************/
+
+table.logo
+        {
+        color:                   #000;
+        background-color:        #FFF;
+        border-bottom: solid 1px #777;
+        
+        vertical-align: middle;
+        padding: 0.1em;
+        }
+
+a.logo
+        {
+        color: #000;
+        text-decoration: none;
+        border-bottom: none;
+        }
+
+/*** main menu **************************************************************/
+
+table.main-menu
+        {
+        color: #444;
+        background-color: #DDD;
+        border-bottom: solid 1px #445;
+
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: pointer;
+
+        font: ;
+        width:  100%;
+        }
+
+td.main-menu
+        {
+        border-right: solid 1px #445;
+
+        width:  1%;
+        padding: 0.1em;
+        }
+
+td.main-menu:hover
+        {
+        background-color: #AB8;
+        }
+
+td.main-menu-fill
+        {
+        border-right: solid 1px #445;
+
+        width:  100%;
+        padding: 0;
+        text-align: right;
+        }
+
+a.main-menu
+        {
+        color: #444;
+
+        display: block;
+        width:  100%;
+        padding: 6px;
+        text-decoration: none;
+        border: none;
+        }
+
+a.main-menu:hover
+        {
+        color: #000;
+
+        text-decoration: none;
+        border: none;
+        }
+
+/*** menu *******************************************************************/
+
+table.menu
+        {
+        color:                #444;
+        background-color:     #DDD;
+        border-top: solid 1px #445;
+
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: pointer;
+
+        width: 80%;
+        max-width: 700px;
+        font: ;
+        }
+
+td.menu
+        {
+        width:  1%;
+        min-width: 20em;
+        border-bottom: solid 1px #445;
+        border-left:   solid 1px #445;
+        border-right:  solid 1px #445;
+
+        padding: 0.1em;
+        white-space: nowrap;
+        /*
+        padding-left: 1em;
+        padding-right: 1em;
+        */
+
+        vertical-align: middle;
+        }
+
+td.menu:hover
+        {
+        background-color: #AB8;
+        }
+
+a.menu
+        {
+        color: #444;
+
+        display: block;
+        width:  100%;
+        padding: 4px;
+        text-decoration: none;
+        border: none;
+        }
+
+a.menu:hover
+        {
+        color:            #000;
+        background-color: #AB8;
+
+        text-decoration: none;
+        border: none;
+        }
+
+@media (max-width: 665px) 
+{
+table.menu
+        {
+        width:  98vw;
+        margin: 0;
+        }
+}        
+
+/*** page sessions path ******************************************************/
+
+tr.ps-path
+        {
+        color:                   #444;
+        background-color:        #DDD;
+        border-bottom: solid 1px #445;
+        
+        font-weight: bold;
+        vertical-align: middle;
+        white-space: normal;
+        }
+
+td.ps-path
+        {
+        padding: 6px;
+        }
+
+/*** record base config for view, edit, insert, preview tables **************/
+
+div.record-table
+        {
+        width:  100%;
+        max-width: 1000px;
+
+        color:            #000;
+        background-color: #CB7;
+        border: solid 1px #676;
+        margin: auto;
+        }
+        
+div.record-field-value
+        {
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        }
+
+div.record-sep
+        {
+        flex: auto;
+        text-align: center;
+        }
+
+div.record-field
+        {
+        flex: 1;
+        text-align: right;
+        
+        font-weight: bold;
+
+        border-top: solid 1px #785;
+        border-right:  solid 1px #785;
+
+        padding: 0.5em 0 0 1em;
+        padding: 0.5em;
+
+        display: table-cell;
+        vertical-align: baseline;
+        }
+
+div.record-value
+        {
+        flex: 2;
+        text-align: left;
+
+        border-top: solid 1px #785;
+        
+        padding: 0.5em 0 1em 0;
+        padding: 0.5em;
+
+        display: table-cell;
+        vertical-align: baseline;
+        }
+
+div.record-first
+        {
+        border-top: none;
+        }
+
+@media (max-width: 665px) 
+{
+div.record-table
+        {
+        width:  98vw;
+        margin: 0;
+        }
+
+div.record-field-value
+        {
+        flex-flow: column;
+        }
+
+div.record-sep
+        {
+        flex: auto;
+        text-align: right;
+        padding-right: 2em;
+        }
+
+div.record-field
+        {
+        flex: 1;
+        text-align: left;
+
+        border: none;
+        }
+
+div.record-value
+        {
+        flex: 1;
+        
+        border: none;
+        border-bottom: solid 1px #785;
+        }
+}
+
+/*** login ******************************************************************/
+
+table.login
+        {
+        width: 42em;
+        }
+
+
+@media (max-width: 800px) 
+{
+table.login
+        {
+        width: 97%;
+        }
+}
+
+/*** view *******************************************************************/
+
+div.view-sep
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+
+        padding: 0.2em;
+        font: ;
+        }
+
+div.insert-divider
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+
+        padding: 0.2em;
+        font: ;
+        }
+
+/* flex */
+/* moved to record-* above
+div.view-flow
+        {
+        display: flex;
+        flex-flow: column;
+
+        color:            #000;
+        background-color: #CB7;
+        border: solid 1px #676;
+
+
+        padding: 1em;
+        border: solid 1px red;
+        }
+
+div.view-field-value
+        {
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        
+        padding: 1em;
+        border: solid 1px green;
+        }
+
+div.view-header
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+        width: 100%;
+
+        padding: 0.2em;
+        font: ;
+        }
+
+div.view-field
+        {
+        flex: 1;
+
+        border-bottom: solid 1px #785;
+        border-right:  solid 1px #785;
+
+        padding: 0.5em;
+        vertical-align: middle;
+
+        padding: 1em;
+        border: solid 1px blue;
+        }
+
+div.view-value
+        {
+        flex: 2;
+
+        border-bottom: solid 1px #785;
+        
+        padding: 0.5em;
+        vertical-align: middle;
+
+        padding: 1em;
+        border: solid 1px blue;
+        }
+
+div.view-details
+        {
+        border-bottom: solid 1px #785;
+        
+        padding: 0.5em;
+        }
+
+@media (max-width: 665px) 
+{
+div.view-field-value
+        {
+        flex-flow: column;
+        }
+
+div.view-field
+        {
+        flex: 1;
+        width: -100%;
+
+        border: none;
+
+        text-align: left;
+        
+        padding: 0.5em;
+        }
+
+div.view-value
+        {
+        flex: 1;
+        width: -100%;
+
+        border-bottom: solid 1px #785;
+        
+        padding: 0.5em;
+        padding-left: 4em;
+        }
+}
+
+*/
+
+/*** edit *******************************************************************/
+
+/*
+
+table.edit
+        {
+        color:            #000;
+        background-color: #CB7;
+        border: solid 1px #676;
+        }
+
+tr.edit
+        {
+        height: 3em;
+        }
+
+td.edit-header
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+
+        padding: 0.2em;
+        font: ;
+        }
+
+td.edit-field
+        {
+        border-bottom: solid 1px #785;
+        border-right:  solid 1px #785;
+
+        padding: 0.5em;
+        }
+
+*/
+
+/*** insert *******************************************************************/
+
+/*
+
+table.insert
+        {
+        color:            #000;
+        background-color: #CB7;
+        border: solid 1px #676;
+        }
+
+tr.insert
+        {
+        height: 3em;
+        }
+
+td.insert-header
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+
+        padding: 0.2em;
+        font: ;
+        }
+
+td.insert-field
+        {
+        border-bottom: solid 1px #785;
+        border-right:  solid 1px #785;
+
+        padding: 0.5em;
+        }
+
+td.insert-value
+        {
+        border-bottom: solid 1px #785;
+        
+        padding: 0.5em;
+        }
+
+*/
+
+/*** view, edit, insert details **************************************************/
+
+.details-fields
+        {
+        padding: 1em;
+        text-align: right;
+        width: 100%;
+        
+        color:            #FFF
+        background-color: #222;
+        }
+
+.details-text
+        {
+        color:            #555
+        }
+
+/*** grid *******************************************************************/
+
+table.grid
+        {
+        color:            #000;
+        background-color: #CB7;
+        border: solid 1px #676;
+
+        border-collapse: collapse;
+        width:  100%;
+        }
+
+td.grid-header
+        {
+        color:            #000;
+        background-color: #EC9;
+        border: solid 1px #9A7;
+
+        font-weight: bold;
+        padding: 0.7em;
+        white-space: normal;
+        }
+
+td.grid-data
+        {
+        padding: 0.5em;
+        white-space: nowrap;
+        border-right: solid 1px #676;
+        }
+
+tr.grid-1
+        {
+        background-color: #BA8;
+        border-bottom: solid 1px #676;
+        }
+
+tr.grid-2
+        {
+        background-color: #A97;
+        border-bottom: solid 1px #676;
+        }
+
+tr.grid-1:hover
+        {
+        border-bottom: solid 1px #EFC;
+        background-color: #CDA;
+        }
+
+tr.grid-2:hover
+        {
+        border-bottom: solid 1px #EFC;
+        background-color: #CDA;
+        }
+
+/*** formats ****************************************************************/
+
+.fmt-left
+        {
+        text-align: left;
+        }
+
+.fmt-right
+        {
+        text-align: right;
+        }
+
+.fmt-center
+        {
+        text-align: center;
+        }
+
+.fmt-mono
+        {
+        font-family: prime, monospace;
+        white-space: nowrap;
+        }
+
+.fmt-ctrl
+        {
+        text-align: left;
+        width: 1%;
+        }
+
+/*** grid navigation ********************************************************/
+
+/* used to align control on grid pages, TODO: can be used for view/edit/etc. */
+table.grid-navi
+        {
+        white-space: nowrap;
+        }
+
+table.grid-navi td
+        {
+        padding: 0.2em;
+        }
+
+/*** form inputs ************************************************************/
+
+
+input,textarea,select,.grid-link-select
+        {
+        padding: 0.5em;
+        padding-right: 2.2em;
+        margin:  0;
+        font: ;
+        
+        color: #000;
+        background-color: #AB8;
+        border: solid 1px #EFC;
+        }
+
+input.search_list,textarea
+        {
+        padding: 0.5em;
+        }
+
+input:hover,textarea:hover,select:hover,.grid-link-select:hover
+        {
+        color: #000;
+        background-color: #CDA;
+        border: solid 1px #EFC;
+        }
+
+input:focus,textarea:focus,select:focus,button:focus
+        {
+        color: #000;
+        background-color: #CDA;
+        border: solid 1px #EFC;
+
+        outline: solid 3px #EFC;
+        }
+
+input:disabled,textarea:disabled,select:disabled,.grid-link-select
+        {
+        color:            ;
+        background-color: ;
+        border: solid 1px ;
+        }
+
+/* stupid stupid firefox and other browsers crap! */
+input:autofill,textarea:autofill,select:autofill,.grid-link-select:autofill
+        {
+        color: #000;
+        background-color: #AB8;
+        border: solid 1px #EFC;
+        }
+:-moz-autofill,:autofill,:-moz-autofill-preview 
+        {
+        color: #000;
+        background-color: #AB8;
+        border: solid 1px #EFC;
+        }
+input:-webkit-autofill 
+        {
+        color: #000;
+        background-color: #AB8;
+        border: solid 1px #EFC;
+        }        
+        
+select,.grid-link-select
+        {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        }
+
+.grid-link-select-option
+        {
+        color: #444;
+        background-color: #DDD;
+
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 0.3em;
+        border: none;
+        border-bottom: solid 1px #445;
+        }
+
+.grid-link-select-option:hover
+        {
+        color: #000;
+        background-color: #AB8;
+
+        padding: 0.3em;
+        border: none;
+        border-bottom: solid 1px #445;
+        }
+
+/*** buttons & icons ********************************************************/
+
+.button,button
+        {
+        border-radius: 2px;
+
+        display: inline-block;
+        cursor: pointer;
+        padding: 0.4em 1.2em 0.4em 1.2em;
+        margin:  0.3em;
+
+        white-space: nowrap;
+        font: ;
+        
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.button:hover,button:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.button:focus,button:focus
+        {
+        color:            #555;
+        background-color: #9A7;
+        border: solid 2px #555;
+        }
+
+.act-button
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.act-button:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.nav-button
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.nav-button:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.mod-button
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.mod-button:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.disabled-button
+        {
+        color:            #555;
+        background-color: #9A7;
+        border: solid 2px #555;
+        cursor: not-allowed;
+        }
+
+.disabled-button:hover
+        {
+        color:            #555;
+        background-color: #9A7;
+        border: solid 2px #555;
+        }
+
+.icon
+        {
+        cursor: pointer;
+        height: 2em;
+        padding: 0.3em;
+        text-decoration: none;
+        background-image: none;
+        border-radius: 2px;
+        margin: 1px 1px 1px 1px;
+
+        font: ;
+
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+.icon:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.icon-clear
+        {
+        cursor: pointer;
+        height: 1.4em;
+        margin-left: -2.2em;
+        }
+
+.act-icon
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.act-icon:hover
+        {
+        color:            #FFF;
+        background-color: #000;
+        border: solid 2px #222;
+        }
+
+.mod-icon
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.mod-icon:hover
+        {
+        color:            #CC6;
+        background-color: #000;
+        border: solid 2px #000;
+        }
+
+.icon-disabled
+        {
+        height: 2.2em;
+        padding: 0.4em;
+        text-decoration: none;
+        border-radius: 2px;
+
+        color:            #555;
+        background-color: #9A7;
+        border: solid 2px #555;
+        }
+
+.icon-disabled:hover
+        {
+        color:            #555;
+        background-color: #9A7;
+        border: solid 2px #555;
+        }
+
+a.icon
+        {
+        margin: 1px 1px 1px 1px;
+        padding: 0;
+        text-decoration: none;
+        }
+
+/*** hover layer ************************************************************/
+
+div.hover-layer
+        {
+        color:            #FFF;
+        background-color: #550;
+        border: solid 1px #990;
+
+        white-space: nowrap;
+        padding: 0.5em;
+        opacity: 0.95;
+
+        display: none;
+        z-index: 99;
+        }
+
+div.popup-layer
+        {
+        color:            #444;
+        background-color: #DDD;
+        border: solid 1px #445;
+
+        white-space: nowrap;
+        padding: 0.5em;
+        opacity: 0.95;
+
+        display: none;
+        }
+
+div.popup-layer-inline
+        {
+        padding: 0;
+        }
+
+div.popup-menu-buttons
+        {
+        display: flex;
+        flex-flow: column;
+        }
+
+div.popup-menu-buttons > a
+        {
+        width: auto;
+        flex: auto;
+        }
+
+/*** other ******************************************************************/
+
+div.vframe
+        {
+        display: inline;
+        }
+
+/*** map locations **********************************************************/
+
+table.map-layout
+        {
+        height: 100%;
+        width:  100%;
+        vertical-align: top;
+        white-space: nowrap;
+        }
+
+td.map-layout
+        {
+        vertical-align: top;
+        height: 100%;
+        width:  100%;
+        }
+
+div#map
+        {
+        width:  100%;
+        height: 100%;
+        min-height: 400px;
+        padding: 0;
+        margin:  0;
+        border: none;
+        overflow: hidden;
+        }
+
+div.map
+        {
+        position: relative;
+        }
+
+div.map_marker
+        {
+        background-image: url('marker-red.svg');
+        background-size: cover;
+        width: 48px;
+        height: 48px;
+        }
+
+/*** effects ****************************************************************/
+
+.pulse      { animation: pulse   1s linear infinite; } 
+.pulse-slow { animation: pulse   2s linear infinite; } 
+.pulse-fast { animation: pulse 0.5s linear infinite; } 
+
+@keyframes pulse 
+        { 
+          0% { opacity: 0; }
+         50% { opacity: 1; }
+        100% { opacity: 0; }
+        }
+
+/*** progress ***************************************************************/
+
+div.progress-div
+        {
+        display: flex;
+        text-align: left;
+        width: 100%;
+        padding: 0.3em;
+        border: solid 1px ;
+        
+        color:            ;
+        background-color: ;
+        }
+
+div.progress-bar
+        {
+        text-align: right;
+        width: 100%;
+        padding: 0.3em;
+
+        color:            ;
+        background-color: ;
+        }
+
+div.progress-empty
+        {
+        text-align: left;
+        width: 100%;
+        padding: 0.3em;
+
+        color:            ;
+        background-color: ;
+        }
+
+/*** DECOR STATIC/SYSTEM SECTION EOF*****************************************/
+
+/*=== gantt ================================================================*/
+
+div.gantt
+  {
+  width: 95vw;
+  overflow: scroll;
+  padding: 1em;
+  margin: auto;
+  scrollbar-width: auto;
+  }
+
+table.gantt
+  {
+  font-size: 14pt;
+  font-family: mont;
+  }
+
+td.gantt-label
+  {
+  text-align: left;
+  background-color: #EEE;
+  border: solid 1px #BBB;
+  padding: 0.3em;
+  width: 1%;
+  white-space: nowrap;
+  }
+
+td.gantt
+  {
+  width: 3em;
+  }
+
+td.gantt-empty
+  {
+  text-align: left;
+  background-color: #CCC;
+  border: solid 1px #AAA;
+  padding: 0.2em;
+  }
+
+td.gantt-today
+  {
+  border-right: dotted 3px #A0F !important;
+  }
+
+td.gantt-weekend
+  {
+  background-color: #FED !important;
+  }
+
+td.gantt-head
+  {
+  background-color: #DDD;
+  border: solid 1px #BBB;
+  padding: 0.2em;
+  font-size: 0.8em;
+  writing-mode: sideways-lr;
+  text-orientation: sideways-right;
+  }
+
+/*--- gantt red --------------------*/
+
+
+td.gantt-m-red
+  {
+  background-color: #D55;
+  padding:          0.2em;
+  border:           solid 1px #B33;
+  border-top:       solid 2px #A22;;
+  border-bottom:    solid 2px #A22;;
+  }
+
+td.gantt-l-red
+  {
+  border-left:  solid 2px #A22;;
+  }
+
+td.gantt-r-red
+  {
+  border-right: solid 2px #A22;;
+  }
+
+/*--- gantt green --------------------*/
+
+
+td.gantt-m-green
+  {
+  background-color: #9C9;
+  padding:          0.2em;
+  border:           solid 1px #7A7;
+  border-top:       solid 2px #696;;
+  border-bottom:    solid 2px #696;;
+  }
+
+td.gantt-l-green
+  {
+  border-left:  solid 2px #696;;
+  }
+
+td.gantt-r-green
+  {
+  border-right: solid 2px #696;;
+  }
+
+/*--- gantt orange -------------------*/
+
+
+td.gantt-m-orange
+  {
+  background-color: #E71;
+  padding:          0.2em;
+  border:           solid 1px #C50;
+  border-top:       solid 2px #B40;;
+  border-bottom:    solid 2px #B40;;
+  }
+
+td.gantt-l-orange
+  {
+  border-left:  solid 2px #B40;;
+  }
+
+td.gantt-r-orange
+  {
+  border-right: solid 2px #B40;;
+  }
+
+/*=== calendar =============================================================*/
+
+
+table.cal
+  {
+  font-size: 14pt;
+  font-family: mont;
+  }
+
+td.cal-label
+  {
+  text-align: left;
+  background-color: #EEE;
+  border: solid 1px #BBB;
+  padding: 0.3em;
+  width: 1%;
+  white-space: nowrap;
+  }
+
+td.cal
+  {
+  width: 3em;
+  color: #555;
+  }
+
+td.cal-active:hover
+  {
+  cursor: pointer;
+  color: #F00;
+  }
+
+td.cal-empty
+  {
+  text-align: left;
+  background-color: #CCC;
+  border: solid 1px #AAA;
+  padding: 0.2em;
+  }
+
+td.cal-today
+  {
+  border-right: dotted 3px #A0F !important;
+  }
+
+td.cal-weekend
+  {
+  background-color: #FED !important;
+  }
+
+td.cal-head
+  {
+  background-color: #DDD;
+  border: solid 1px #BBB;
+  padding: 0.2em;
+  font-size: 0.8em;
+  text-align: middle;
+  }
+
+/*--- cal red --------------------*/
+
+
+td.cal-m-red
+  {
+  background-color: #D55;
+  padding:          0.2em;
+  border:           solid 1px #B33;
+  border-top:       solid 2px #A22;;
+  border-bottom:    solid 2px #A22;;
+  color: #CCC;
+  }
+
+td.cal-l-red
+  {
+  border-left:  solid 2px #A22;;
+  color: #CCC;
+  }
+
+td.cal-r-red
+  {
+  border-right: solid 2px #A22;;
+  color: #CCC;
+  }
+
+/*--- cal green --------------------*/
+
+
+td.cal-m-green
+  {
+  background-color: #BEB;
+  padding:          0.2em;
+  border:           solid 1px #7A7;
+  border-top:       solid 2px #696;;
+  border-bottom:    solid 2px #696;;
+  }
+
+td.cal-l-green
+  {
+  border-left:  solid 2px #696;;
+  }
+
+td.cal-r-green
+  {
+  border-right: solid 2px #696;;
+  }
+
+/*--- cal orange -------------------*/
+
+
+td.cal-m-orange
+  {
+  background-color: #E71;
+  padding:          0.2em;
+  border:           solid 1px #C50;
+  border-top:       solid 2px #B40;;
+  border-bottom:    solid 2px #B40;;
+  }
+
+td.cal-l-orange
+  {
+  border-left:  solid 2px #B40;;
+  }
+
+td.cal-r-orange
+  {
+  border-right: solid 2px #B40;;
+  }
+
+/*** DECOR EOF **************************************************************/

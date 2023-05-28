@@ -1,0 +1,7 @@
+
+=PASS
+  
+  label [~Change password]
+  type  insert CHANGE_PASSWORD
+  grant access to 908
+

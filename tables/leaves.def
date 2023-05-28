@@ -1,0 +1,15 @@
+
+label User leaves
+
+=USR
+    link  USERS NAME
+    web.search
+  
+=FR_DATE
+    date
+    label From date
+    
+=TO_DATE
+    date
+    label To date
+    

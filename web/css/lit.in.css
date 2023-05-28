@@ -1,0 +1,369 @@
+/*############################################################################
+##
+##  Decor application machinery core
+##  2014-2021 (c) Vladi Belperchinov-Shabanski "Cade"
+##  <cade@bis.bg> <cade@biscom.net> <cade@cpan.org>
+##
+##  LICENSE: GPLv2
+##
+############################################################################*/
+
+/* $ALTER_CSS_GEN_WARNING -- GENERATED AT $ALTER_CSS_GEN_TIME */
+
+/*$* DECOR SYSTEM DEFAULT CSS, CONFIG SECTION, DO NOT MODIFY STRUCTURE! *****/
+
+/*$                     fg    bg    bg-image */
+$body-colors            #000  #EEE  
+$body-colors-print      #000  #FFF
+
+/*$                      fg    decoration  fg-hi  decor-hi fg-focus decor-focus */ 
+$link-colors             #555  #222        #000   #000     #F00     #0F0
+
+/*$                      fg    bg    border fg-hi bg-hi  border-hi */
+$action-item             #CC6  #000  #000  #FFF   #000   #222
+$action-item-act         $action-item
+$action-item-nav         $action-item
+$action-item-mod         $action-item
+$action-item-disabled    #555  #9A7  #555  #555   #9A7   #555
+
+/*$                      fg    bg    border fg-hi bg-hi  border-hi */
+$icon-colors             $action-item
+$act-icon-colors         $action-item-act
+$mod-icon-colors         $action-item-mod
+$disabled-icon-colors    $action-item-disabled
+$icon-clear-colors       #CCC  #676  #999   #FFF  #444   #DDD
+
+/*$                      fg    bg    border fg-hi bg-hi  border-hi */
+$button-colors           $action-item
+$act-button-colors       $action-item-act
+$nav-button-colors       $action-item-nav
+$mod-button-colors       $action-item-mod
+$disabled-button-colors  $action-item-disabled
+
+/*$                      fg    bg    border */
+$button-focus-colors     $action-item-disabled
+
+/*$                      fg    bg    border  fg-hi  bg-hi  border-hi */
+$check-unknown-colors    $action-item-disabled
+$check-0-colors          $action-item-mod
+$check-1-colors          $action-item-act
+
+/*$                 fg    bg    border border-left  border-width left-border-width */
+$error-box-colors   #FFF  #611  #611   #611         1px          4px
+$info-box-colors    #FFF  #357  #68A   #68A         1px          4px
+
+/*$                   fg    bg       3d-top 3d-bottom */
+$edit-link-data-box   #CCC  #113     #444  #444
+$edit-link-empty-box  #000  #a9775b  #444  #444
+
+/*$              fg    bg    border-color */
+$warning-colors  #FFF  #822  #633
+
+/*$       fg    -- this is the highlight color, usually should be body-fg but higher */
+$hi-color #FFF
+
+/*$             fg    bg    border-color  */
+$logo-colors    #000  #FFF  #777
+
+/*$             fg    bg    border-color  */
+$footer-colors  $logo-colors
+
+
+/*$           fg    bg    fg-hi  bg-hi  border */
+$menu-colors  #444  #DDD  #000   #AB8   #445
+
+/*$                  fg    bg    border  inside-border */
+$view-data-colors    #000  #CB7  #676    #785
+$view-head-colors    #000  #EC9  #9A7 
+
+$edit-data-colors    $view-data-colors
+$edit-head-colors    $view-head-colors
+
+$insert-data-colors  $view-data-colors
+$insert-head-colors  $view-head-colors
+
+$grid-data-colors    $view-data-colors
+$grid-head-colors    $view-head-colors
+
+/*$                        fg    bg    border fg-hi bg-hi border-hi    */
+$input-field-colors        #000  #AB8  #EFC   #000  #CDA  #EFC
+
+/*$                        fg    bg    border outline  */
+$input-field-focus-colors  #000  #CDA  #EFC   #EFC
+                           
+
+/*$                     fg    bg  */
+$details-fields-colors  #FFF  #222
+$details-text-colors    #555
+
+/*$                      bg-odd   bg-even  bg-hi    bottom-border-hi        */
+$grid-data-row-odd-even  #BA8     #A97     #CDA     #EFC
+
+/*$            fg              bg              border */
+$hover-colors  #FFF            #550            #990
+$popup-colors  $menu-colors.1  $menu-colors.2  $menu-colors.5
+
+
+$$$decor_base_system.in.css
+
+/*=== gantt ================================================================*/
+
+div.gantt
+  {
+  width: 95vw;
+  overflow: scroll;
+  padding: 1em;
+  margin: auto;
+  scrollbar-width: auto;
+  }
+
+table.gantt
+  {
+  font-size: 14pt;
+  font-family: mont;
+  }
+
+td.gantt-label
+  {
+  text-align: left;
+  background-color: #EEE;
+  border: solid 1px #BBB;
+  padding: 0.3em;
+  width: 1%;
+  white-space: nowrap;
+  }
+
+td.gantt
+  {
+  width: 3em;
+  }
+
+td.gantt-empty
+  {
+  text-align: left;
+  background-color: #CCC;
+  border: solid 1px #AAA;
+  padding: 0.2em;
+  }
+
+td.gantt-today
+  {
+  border-right: dotted 3px #A0F !important;
+  }
+
+td.gantt-weekend
+  {
+  background-color: #FED !important;
+  }
+
+td.gantt-head
+  {
+  background-color: #DDD;
+  border: solid 1px #BBB;
+  padding: 0.2em;
+  font-size: 0.8em;
+  writing-mode: sideways-lr;
+  text-orientation: sideways-right;
+  }
+
+/*--- gantt red --------------------*/
+
+$td-gantt-red-border  solid 2px #D55-3;
+
+td.gantt-m-red
+  {
+  background-color: #D55;
+  padding:          0.2em;
+  border:           solid 1px #D55-2;
+  border-top:       $td-gantt-red-border;
+  border-bottom:    $td-gantt-red-border;
+  }
+
+td.gantt-l-red
+  {
+  border-left:  $td-gantt-red-border;
+  }
+
+td.gantt-r-red
+  {
+  border-right: $td-gantt-red-border;
+  }
+
+/*--- gantt green --------------------*/
+
+$td-gantt-green-border  solid 2px #696;
+
+td.gantt-m-green
+  {
+  background-color: #9C9;
+  padding:          0.2em;
+  border:           solid 1px #7A7;
+  border-top:       $td-gantt-green-border;
+  border-bottom:    $td-gantt-green-border;
+  }
+
+td.gantt-l-green
+  {
+  border-left:  $td-gantt-green-border;
+  }
+
+td.gantt-r-green
+  {
+  border-right: $td-gantt-green-border;
+  }
+
+/*--- gantt orange -------------------*/
+
+$td-gantt-orange-border  solid 2px #E71-3;
+
+td.gantt-m-orange
+  {
+  background-color: #E71;
+  padding:          0.2em;
+  border:           solid 1px #E71-2;
+  border-top:       $td-gantt-orange-border;
+  border-bottom:    $td-gantt-orange-border;
+  }
+
+td.gantt-l-orange
+  {
+  border-left:  $td-gantt-orange-border;
+  }
+
+td.gantt-r-orange
+  {
+  border-right: $td-gantt-orange-border;
+  }
+
+/*=== calendar =============================================================*/
+
+$cal-color #555 #F00 #CCC
+
+table.cal
+  {
+  font-size: 14pt;
+  font-family: mont;
+  }
+
+td.cal-label
+  {
+  text-align: left;
+  background-color: #EEE;
+  border: solid 1px #BBB;
+  padding: 0.3em;
+  width: 1%;
+  white-space: nowrap;
+  }
+
+td.cal
+  {
+  width: 3em;
+  color: $cal-color.1;
+  }
+
+td.cal-active:hover
+  {
+  cursor: pointer;
+  color: $cal-color.2;
+  }
+
+td.cal-empty
+  {
+  text-align: left;
+  background-color: #CCC;
+  border: solid 1px #AAA;
+  padding: 0.2em;
+  }
+
+td.cal-today
+  {
+  border-right: dotted 3px #A0F !important;
+  }
+
+td.cal-weekend
+  {
+  background-color: #FED !important;
+  }
+
+td.cal-head
+  {
+  background-color: #DDD;
+  border: solid 1px #BBB;
+  padding: 0.2em;
+  font-size: 0.8em;
+  text-align: middle;
+  }
+
+/*--- cal red --------------------*/
+
+$td-cal-red-border  solid 2px #D55-3;
+
+td.cal-m-red
+  {
+  background-color: #D55;
+  padding:          0.2em;
+  border:           solid 1px #D55-2;
+  border-top:       $td-cal-red-border;
+  border-bottom:    $td-cal-red-border;
+  color: $cal-color.3;
+  }
+
+td.cal-l-red
+  {
+  border-left:  $td-cal-red-border;
+  color: $cal-color.3;
+  }
+
+td.cal-r-red
+  {
+  border-right: $td-cal-red-border;
+  color: $cal-color.3;
+  }
+
+/*--- cal green --------------------*/
+
+$td-cal-green-border  solid 2px #696;
+
+td.cal-m-green
+  {
+  background-color: #BEB;
+  padding:          0.2em;
+  border:           solid 1px #7A7;
+  border-top:       $td-cal-green-border;
+  border-bottom:    $td-cal-green-border;
+  }
+
+td.cal-l-green
+  {
+  border-left:  $td-cal-green-border;
+  }
+
+td.cal-r-green
+  {
+  border-right: $td-cal-green-border;
+  }
+
+/*--- cal orange -------------------*/
+
+$td-cal-orange-border  solid 2px #E71-3;
+
+td.cal-m-orange
+  {
+  background-color: #E71;
+  padding:          0.2em;
+  border:           solid 1px #E71-2;
+  border-top:       $td-cal-orange-border;
+  border-bottom:    $td-cal-orange-border;
+  }
+
+td.cal-l-orange
+  {
+  border-left:  $td-cal-orange-border;
+  }
+
+td.cal-r-orange
+  {
+  border-right: $td-cal-orange-border;
+  }
+
+/*** DECOR EOF **************************************************************/

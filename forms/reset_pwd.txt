@@ -1,0 +1,7 @@
+
+<pre>
+ User name: <b>[realname]</b>
+    E-mail: <b>[email]</b>
+Login name: <b>[username]</b>
+  Password: <b>[temp_pwd]</b>
+</pre>

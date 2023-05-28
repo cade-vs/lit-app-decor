@@ -1,0 +1,18 @@
+
+label Users
+
+=DE_USR
+    link  DE_USERS  NAME
+
+=NAME
+    char  64
+
+=PHONE
+    phone
+    
+=EMAIL
+    email
+
+=DO: RESETPWD
+    label Reset password
+    grant all
